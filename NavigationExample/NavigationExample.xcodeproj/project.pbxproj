@@ -18,6 +18,7 @@
 		FA14294216EEBA5A00FEDF85 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA14294116EEBA5A00FEDF85 /* Default-568h@2x.png */; };
 		FA14294516EEBA5A00FEDF85 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA14294316EEBA5A00FEDF85 /* MainStoryboard.storyboard */; };
 		FA14294816EEBA5A00FEDF85 /* CUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA14294716EEBA5A00FEDF85 /* CUViewController.m */; };
+		FA7A56D316F15CBB00796E42 /* CUDummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7A56D216F15CBB00796E42 /* CUDummyViewController.m */; };
 		FA9A824916F1450E0050EA1A /* CUDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA9A824816F1450E0050EA1A /* CUDetailViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,8 @@
 		FA14294416EEBA5A00FEDF85 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		FA14294616EEBA5A00FEDF85 /* CUViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CUViewController.h; sourceTree = "<group>"; };
 		FA14294716EEBA5A00FEDF85 /* CUViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CUViewController.m; sourceTree = "<group>"; };
+		FA7A56D116F15CBB00796E42 /* CUDummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUDummyViewController.h; sourceTree = "<group>"; };
+		FA7A56D216F15CBB00796E42 /* CUDummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUDummyViewController.m; sourceTree = "<group>"; };
 		FA9A824716F1450E0050EA1A /* CUDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUDetailViewController.h; sourceTree = "<group>"; };
 		FA9A824816F1450E0050EA1A /* CUDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +89,9 @@
 		FA14293116EEBA5A00FEDF85 /* NavigationExample */ = {
 			isa = PBXGroup;
 			children = (
+				FA7A56D116F15CBB00796E42 /* CUDummyViewController.h */,
+				FA7A56D216F15CBB00796E42 /* CUDummyViewController.m */,
+				FA7A56CD16F1556B00796E42 /* Grupo1 */,
 				FA14293A16EEBA5A00FEDF85 /* CUAppDelegate.h */,
 				FA14293B16EEBA5A00FEDF85 /* CUAppDelegate.m */,
 				FA14294316EEBA5A00FEDF85 /* MainStoryboard.storyboard */,
@@ -110,6 +116,13 @@
 				FA14294116EEBA5A00FEDF85 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA7A56CD16F1556B00796E42 /* Grupo1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Grupo1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +196,7 @@
 				FA14293C16EEBA5A00FEDF85 /* CUAppDelegate.m in Sources */,
 				FA14294816EEBA5A00FEDF85 /* CUViewController.m in Sources */,
 				FA9A824916F1450E0050EA1A /* CUDetailViewController.m in Sources */,
+				FA7A56D316F15CBB00796E42 /* CUDummyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

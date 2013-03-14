@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CUDummyViewController.h"
 
 @interface CUDetailViewController : UIViewController
 {
- 
+    CUDummyViewController * dummy; 
     IBOutlet UILabel *cityLabel;
 }
-@property (strong, nonatomic) NSString *cityText;
+@property (strong, nonatomic) NSString * cityText;
+
 
 @end

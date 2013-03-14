@@ -29,9 +29,26 @@
     [super viewDidLoad];
     NSLog(@"tile %@",self.title);
     cityLabel.text = self.cityText;
+    
+    UIStoryboard *storyBoard  = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    dummy =  [storyBoard instantiateViewControllerWithIdentifier:@"dummyViewController"];
+    [self.view addSubview:dummy.view];
+    
+   dummy.view.frame = CGRectMake(dummy.view.frame.origin.x,
+                                  dummy.view.frame.origin.y - 20,
+                                  dummy.view.frame.size.width, 
+                                  dummy.view.frame.size.height - 300);
+    dummy.delegate = self;
+    
+    [dummy dummyTouch:self];
+    
 	// Do any additional setup after loading the view.
 }
-
+- (void) pressDummyButton
+{
+     cityLabel.text = @"precione el botton";
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
