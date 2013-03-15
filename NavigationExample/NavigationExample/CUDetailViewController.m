@@ -30,7 +30,7 @@
     NSLog(@"tile %@",self.title);
     cityLabel.text = self.cityText;
     
-    UIStoryboard *storyBoard  = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+   /* UIStoryboard *storyBoard  = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     dummy =  [storyBoard instantiateViewControllerWithIdentifier:@"dummyViewController"];
     [self.view addSubview:dummy.view];
     
@@ -43,7 +43,7 @@
                                              selector:@selector(notiSelector) 
                                                  name:@"myNotification" 
                                                object:nil];
-    //[dummy dummyTouch:self];
+    //[dummy dummyTouch:self];*/
     
 	// Do any additional setup after loading the view.
 }
@@ -52,7 +52,7 @@
      cityLabel.text = @"precione el botton";
     
 }*/
-- (void) notiSelector
+/*- (void) notiSelector
 {
     //[UIView animateWithDuration:0.5 animations:];
     
@@ -71,7 +71,7 @@
 {
     return [UIColor blueColor];
 
-}
+}*/
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
