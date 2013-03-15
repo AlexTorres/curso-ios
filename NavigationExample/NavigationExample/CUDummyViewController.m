@@ -39,11 +39,19 @@
 
 - (IBAction)dummyTouch:(id)sender {
     
-    if([self.delegate respondsToSelector:@selector(pressDummyButton)])
+    /*if([self.delegate respondsToSelector:@selector(pressDummyButton)])
     {
        [self.delegate performSelector:@selector(pressDummyButton)];
     
     
-    }
+    }*/
+    //[self.delegate returnViewColor:self.view.backgroundColor ];
+    self.view.backgroundColor = [self.delegate chageColorView:self.view];
+
+}
+- (IBAction)sendNotification:(id)sender {
+    [[NSNotificationCenter defaultCenter] 
+     postNotificationName:@"myNotification" 
+     object:self];
 }
 @end

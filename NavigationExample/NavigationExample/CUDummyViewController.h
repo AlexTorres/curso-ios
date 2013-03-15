@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TheProtocol.h"
 
 @interface CUDummyViewController : UIViewController
 
 - (IBAction)dummyTouch:(id)sender;
-@property (weak, nonatomic)  id  delegate;
+@property (weak, nonatomic)  id<TheProtocol> delegate;
 @end

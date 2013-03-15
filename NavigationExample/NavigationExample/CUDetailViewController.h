@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CUDummyViewController.h"
 
-@interface CUDetailViewController : UIViewController
+@interface CUDetailViewController : UIViewController<TheProtocol>
 {
     CUDummyViewController * dummy; 
     IBOutlet UILabel *cityLabel;

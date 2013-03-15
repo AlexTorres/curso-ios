@@ -39,20 +39,47 @@
                                   dummy.view.frame.size.width, 
                                   dummy.view.frame.size.height - 300);
     dummy.delegate = self;
-    
-    [dummy dummyTouch:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(notiSelector) 
+                                                 name:@"myNotification" 
+                                               object:nil];
+    //[dummy dummyTouch:self];
     
 	// Do any additional setup after loading the view.
 }
-- (void) pressDummyButton
+/*- (void) pressDummyButton
 {
      cityLabel.text = @"precione el botton";
     
+}*/
+- (void) notiSelector
+{
+    //[UIView animateWithDuration:0.5 animations:];
+    
+    [UIView animateWithDuration:0.5 
+                          delay:0 
+                        options:UIViewAnimationOptionCurveEaseIn 
+                     animations:^{
+                         //self.view.alpha=0;
+                         self.view.transform = CGAffineTransformMakeTranslation(0, 150);
+                         self.view.transform = CGAffineTransformMakeRotation(M_PI/2);
+                     } 
+                     completion:^(BOOL finish){     [[NSNotificationCenter defaultCenter] removeObserver:self];}];
+    
+}
+-(UIColor *)chageColorView:(UIView *)view
+{
+    return [UIColor blueColor];
+
 }
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)dealloc
+{
+  
 }
 
 @end
