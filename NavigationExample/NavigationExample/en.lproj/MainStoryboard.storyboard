@@ -108,7 +108,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJx-GI-egF">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJx-GI-egF">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="L0P-DB-2pz"/>
                                     <constraint firstAttribute="width" constant="269" id="uJ0-dB-aJb"/>
@@ -117,16 +117,25 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dVL-9O-lPP">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="397" id="Lfb-Of-z7x"/>
+                                </constraints>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="LJx-GI-egF" secondAttribute="bottom" constant="140" id="Zbs-eQ-jxv"/>
-                            <constraint firstAttribute="trailing" secondItem="LJx-GI-egF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="dNn-dn-rSX"/>
+                            <constraint firstItem="dVL-9O-lPP" firstAttribute="leading" secondItem="enh-cx-igO" secondAttribute="leading" type="default" id="3Vh-rx-HiQ"/>
+                            <constraint firstItem="dVL-9O-lPP" firstAttribute="top" secondItem="enh-cx-igO" secondAttribute="top" type="default" id="7FP-W3-SK4"/>
+                            <constraint firstAttribute="bottom" secondItem="LJx-GI-egF" secondAttribute="bottom" constant="12" id="F2P-YX-OqK"/>
+                            <constraint firstItem="dVL-9O-lPP" firstAttribute="trailing" secondItem="enh-cx-igO" secondAttribute="trailing" type="default" id="akt-p7-87L"/>
+                            <constraint firstItem="LJx-GI-egF" firstAttribute="leading" secondItem="enh-cx-igO" secondAttribute="leading" constant="37" id="yD5-yC-bSB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="N5V-0x-D2w"/>
                     <connections>
                         <outlet property="cityLabel" destination="LJx-GI-egF" id="nVx-T9-ZtJ"/>
+                        <outlet property="myMap" destination="dVL-9O-lPP" id="Qob-tI-0eb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfo-ek-fPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -157,6 +166,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CUDetailViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="cityLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="myMap" candidateClass="MKMapView"/>
             </relationships>
         </class>
         <class className="CUDummyViewController" superclassName="UIViewController">

@@ -8,11 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "CUDummyViewController.h"
+#import <MapKit/MapKit.h>
+#import "EXAnotation.h"
+
 
 @interface CUDetailViewController : UIViewController<TheProtocol>
 {
     CUDummyViewController * dummy; 
     IBOutlet UILabel *cityLabel;
+    IBOutlet MKMapView *myMap;
+    
+    
 }
 @property (strong, nonatomic) NSString * cityText;
 

@@ -29,6 +29,24 @@
     [super viewDidLoad];
     NSLog(@"tile %@",self.title);
     cityLabel.text = self.cityText;
+    CLLocationCoordinate2D centerCoord;
+    centerCoord.latitude = 40.7142;
+    centerCoord.longitude = -74.0064;
+    EXAnotation * anotation = [[EXAnotation alloc] init];
+    anotation.latitude = [NSNumber numberWithFloat:centerCoord.latitude];
+    anotation.longitude = [NSNumber numberWithFloat:centerCoord.longitude];
+    anotation.titleAnotation = self.cityText;
+    [myMap addAnnotation:anotation];
+    
+    
+    MKCoordinateRegion region  = MKCoordinateRegionMakeWithDistance(centerCoord, 
+                                                             1000, 
+                                                             100);
+    [myMap setRegion:region animated:YES];
+    
+  //  CLRegion = C
+    
+    
     
    /* UIStoryboard *storyBoard  = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     dummy =  [storyBoard instantiateViewControllerWithIdentifier:@"dummyViewController"];
