@@ -90,41 +90,6 @@
     return [UIColor blueColor];
 
 }*/
-
-- (IBAction)locateMe:(id)sender {
-    
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
-    [locationManager startUpdatingLocation];
-}
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
-    CLLocation *location = [locations objectAtIndex:0];
-    cityLabel.text = [NSString stringWithFormat:@"Latitud :%f \nlongitud :%f \naltitud:%f",
-                      location.coordinate.latitude,
-                      location.coordinate.longitude,
-                      location.altitude];
-    // TODO: esto puede ir en una funcion mas bonita!!!
-    CLLocationCoordinate2D centerCoord;
-    centerCoord.latitude = location.coordinate.latitude;
-    centerCoord.longitude = location.coordinate.longitude;
-    EXAnotation * anotation = [[EXAnotation alloc] init];
-    anotation.latitude = [NSNumber numberWithFloat:centerCoord.latitude];
-    anotation.longitude = [NSNumber numberWithFloat:centerCoord.longitude];
-    anotation.titleAnotation = self.cityText;
-    [myMap addAnnotation:anotation];
-    
-    
-    MKCoordinateRegion region  = MKCoordinateRegionMakeWithDistance(centerCoord, 
-                                                                    1000, 
-                                                                    100);
-    [myMap setRegion:region animated:YES];
-    
-    
-    [locationManager stopUpdatingLocation];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -134,5 +99,49 @@
 {
   
 }
+- (IBAction)sendMail:(id)sender {
+    
+   if( [MFMailComposeViewController canSendMail])
+   {
+   
+       MFMailComposeViewController * mailComposer= [[MFMailComposeViewController alloc] init];
+       mailComposer.mailComposeDelegate = self;
+       mailComposer.title = @"el mail";
+       [mailComposer setSubject:@"test"];
+       [mailComposer setMessageBody:@"aca va el body" isHTML:NO];
+       [self presentViewController:mailComposer animated:YES completion:nil];
+   
+   }
+}
+-(void) mailComposeController:(MFMailComposeViewController *)controller 
+          didFinishWithResult:(MFMailComposeResult)result 
+                        error:(NSError *)error
+{
+    if(result == MFMailComposeResultSent)
+    {
+        cityLabel.text = @"Envio el mail";
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
+- (IBAction)sendMessage:(id)sender {
+   if([MFMessageComposeViewController canSendText])
+   {
+       MFMessageComposeViewController * messagecomponet = [[MFMessageComposeViewController alloc] init];
+       messagecomponet.body = @"mensaje de texto";
+       messagecomponet.messageComposeDelegate = self;
+       [self presentViewController:messagecomponet animated:YES completion:nil];
+   }
+    
+}
+
+- (void) messageComposeViewController:(MFMessageComposeViewController *)controller 
+                  didFinishWithResult:(MessageComposeResult)result
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
 
 @end

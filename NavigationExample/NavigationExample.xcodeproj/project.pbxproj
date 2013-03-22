@@ -19,6 +19,7 @@
 		FA14294516EEBA5A00FEDF85 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA14294316EEBA5A00FEDF85 /* MainStoryboard.storyboard */; };
 		FA14294816EEBA5A00FEDF85 /* CUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA14294716EEBA5A00FEDF85 /* CUViewController.m */; };
 		FA200A6316FBD55B0039B574 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA200A6216FBD55B0039B574 /* CoreLocation.framework */; };
+		FA200A6616FBE8130039B574 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA200A6516FBE8130039B574 /* MessageUI.framework */; };
 		FA7A56D316F15CBB00796E42 /* CUDummyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7A56D216F15CBB00796E42 /* CUDummyViewController.m */; };
 		FA7A56D916F2B1E700796E42 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA7A56D816F2B1E700796E42 /* MapKit.framework */; };
 		FA7A56DF16F2B85900796E42 /* EXAnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7A56DE16F2B85900796E42 /* EXAnotation.m */; };
@@ -43,6 +44,7 @@
 		FA14294616EEBA5A00FEDF85 /* CUViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CUViewController.h; sourceTree = "<group>"; };
 		FA14294716EEBA5A00FEDF85 /* CUViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CUViewController.m; sourceTree = "<group>"; };
 		FA200A6216FBD55B0039B574 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FA200A6516FBE8130039B574 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		FA7A56D116F15CBB00796E42 /* CUDummyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUDummyViewController.h; sourceTree = "<group>"; };
 		FA7A56D216F15CBB00796E42 /* CUDummyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUDummyViewController.m; sourceTree = "<group>"; };
 		FA7A56D616F297EE00796E42 /* TheProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheProtocol.h; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA200A6616FBE8130039B574 /* MessageUI.framework in Frameworks */,
 				FA200A6316FBD55B0039B574 /* CoreLocation.framework in Frameworks */,
 				FA7A56D916F2B1E700796E42 /* MapKit.framework in Frameworks */,
 				FA14292C16EEBA5A00FEDF85 /* UIKit.framework in Frameworks */,
@@ -72,6 +75,7 @@
 		FA14291F16EEBA5A00FEDF85 = {
 			isa = PBXGroup;
 			children = (
+				FA200A6516FBE8130039B574 /* MessageUI.framework */,
 				FA7A56DD16F2B85900796E42 /* EXAnotation.h */,
 				FA7A56DE16F2B85900796E42 /* EXAnotation.m */,
 				FA14293116EEBA5A00FEDF85 /* NavigationExample */,
