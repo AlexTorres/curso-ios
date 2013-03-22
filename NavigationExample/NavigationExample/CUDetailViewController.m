@@ -90,6 +90,41 @@
     return [UIColor blueColor];
 
 }*/
+
+- (IBAction)locateMe:(id)sender {
+    
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation;
+    [locationManager startUpdatingLocation];
+}
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *location = [locations objectAtIndex:0];
+    cityLabel.text = [NSString stringWithFormat:@"Latitud :%f \nlongitud :%f \naltitud:%f",
+                      location.coordinate.latitude,
+                      location.coordinate.longitude,
+                      location.altitude];
+    // TODO: esto puede ir en una funcion mas bonita!!!
+    CLLocationCoordinate2D centerCoord;
+    centerCoord.latitude = location.coordinate.latitude;
+    centerCoord.longitude = location.coordinate.longitude;
+    EXAnotation * anotation = [[EXAnotation alloc] init];
+    anotation.latitude = [NSNumber numberWithFloat:centerCoord.latitude];
+    anotation.longitude = [NSNumber numberWithFloat:centerCoord.longitude];
+    anotation.titleAnotation = self.cityText;
+    [myMap addAnnotation:anotation];
+    
+    
+    MKCoordinateRegion region  = MKCoordinateRegionMakeWithDistance(centerCoord, 
+                                                                    1000, 
+                                                                    100);
+    [myMap setRegion:region animated:YES];
+    
+    
+    [locationManager stopUpdatingLocation];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

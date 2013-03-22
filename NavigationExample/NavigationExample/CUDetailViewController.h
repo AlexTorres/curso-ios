@@ -10,14 +10,16 @@
 #import "CUDummyViewController.h"
 #import <MapKit/MapKit.h>
 #import "EXAnotation.h"
+#import <CoreLocation/CoreLocation.h>
 
 
-@interface CUDetailViewController : UIViewController<TheProtocol>
+
+@interface CUDetailViewController : UIViewController<TheProtocol,CLLocationManagerDelegate>
 {
     CUDummyViewController * dummy; 
     IBOutlet UILabel *cityLabel;
     IBOutlet MKMapView *myMap;
-    
+    CLLocationManager * locationManager;
     
 }
 @property (strong, nonatomic) NSString * cityText;
